@@ -4,6 +4,8 @@ import swaggerFile from "./swagger.json";
 
 import { router } from "./routes";
 
+import "./database";
+
 const app = express();
 
 app.use(express.json());
@@ -12,4 +14,4 @@ app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerFile));
 
 app.use(router);
 
-app.listen(3333, () => console.log("SERVER IS RUNNING!!!"));
+app.listen(3333, () => console.log("SERVER IS RUNNING!"));
