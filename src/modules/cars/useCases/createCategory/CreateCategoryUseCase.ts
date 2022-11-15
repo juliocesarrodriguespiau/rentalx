@@ -7,17 +7,13 @@ interface IRequest {
 }
 
 class CreateCategoryUseCase {
-    static execute(arg0: { name: any; description: any; }) {
-        throw new Error("Method not implemented.");
-    }
-
     constructor( private categoriesRepository: ICategoriesRepository ) {}
 
-    execute({ name, description }: IRequest): void {
-        const categoryAlreadyExists = this.categoriesRepository.findByName(name);
+    async execute({ description, name }: IRequest): Promise<void> {
+        const categoryAlreadyExists = await this.categoriesRepository.findByName(name);
 
         if ( categoryAlreadyExists )
-            throw new Error("Category Already exists!");
+            throw new Error("Category Already Exists!");
     
         this.categoriesRepository.create({ name, description });
     }
