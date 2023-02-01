@@ -27,4 +27,8 @@ class CategoriesRepositoryInMemory implements ICategoriesRepository {
     }   
 }
 
+<<<<<<< HEAD
 export { CategoriesRepositoryInMemory };
+=======
+export { CategoriesRepositoryInMemory };
+>>>>>>> c6d71285ab1c87c96097764163b275d0a95e447a
