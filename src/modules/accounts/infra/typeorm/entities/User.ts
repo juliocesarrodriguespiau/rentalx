@@ -34,4 +34,4 @@ class User {
     }
 }
 
-export { User }
+export { User };
